@@ -21,4 +21,3 @@ def predict(model, data):
 if __name__ == "__main__":
     model = train_model()
     joblib.dump(model, "model.joblib")  # Save the trained model
-
