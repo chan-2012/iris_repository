@@ -24,9 +24,9 @@ class TestModel(unittest.TestCase):
         print(f"Prediction: {prediction}")
 
         # Add a more specific assertion
-        self.assertEqual(len(prediction), 1)  # Make sure we got one prediction
+        self.assertEqual(len(prediction), 1)  # Make sure we got prediction
         # Since we know this test data should be setosa
-        self.assertEqual(prediction[0], 'Iris-setosa')  # Check the actual prediction.
+        self.assertEqual(prediction[0], 'Iris-setosa')  # Check prediction
 
         test_data_versicolor = pd.DataFrame([[6.0, 3.0, 4.5, 1.5]],
                                             columns=['SepalLengthCm',
