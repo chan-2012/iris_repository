@@ -12,7 +12,8 @@ class TestModel(unittest.TestCase):
     def test_model_prediction(self):
         model = joblib.load("model.joblib")
         test_data = pd.DataFrame([[5.1, 3.5, 1.4, 0.2]],
-    columns=['SepalLengthCm','SepalWidthCm','PetalLengthCm','PetalWidthCm'])
+                                 columns=['SepalLengthCm', 'SepalWidthCm',
+                                          'PetalLengthCm', 'PetalWidthCm'])
         prediction = predict(model, test_data)
         self.assertIsNotNone(prediction)
 
