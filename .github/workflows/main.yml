@@ -22,14 +22,15 @@ jobs:
       - name: Lint with flake8
         run: |
           flake8 src/
+      - name: Train Model
+        run: |
+          python src/model.py
       - name: Run tests
         run: |
           python -m unittest discover -s src/tests
-      - name: Train and Save Model
-        run: |
-          python src/model.py
       - name: Upload Model Artifact
         uses: actions/upload-artifact@v3
+        if: success() # Only upload if the tests pass
         with:
           name: model
           path: model.joblib
