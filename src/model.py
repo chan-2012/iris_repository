@@ -6,7 +6,7 @@ import joblib
 
 def train_model(data_path="iris.csv"):
     df = pd.read_csv(data_path)
-    X = df.drop("Species", axis=1)
+    X = df.drop(["Id", "Species"], axis=1)
     y = df["Species"]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
     model = RandomForestClassifier(random_state=42)
